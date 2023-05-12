@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container bg-dark">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="input-group" id="searchbar">
+            <label for="search"></label>
+            <input
+              list="cities"
+              id="search"
+              class="form-control form-control-lg"
+              name="selected_city"
+              placeholder="Champs Elusees, Paris"
+            />
+            <datalist id="cities"></datalist>
+            <span class="input-group-btn">
+              <button
+                class="btn btn-primary btn-lg"
+                id="search_button"
+                type="sub"
+              >
+                <i class="fa fa-search fa-fw"></i> Search
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white">
+        <div class="row" id="check">
+          <div class="col-lg-4-offset border border-secondary">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="checkin"
+                  ><i class="fas fa-calendar-alt"></i
+                ></span>
+              </div>
+
+              <input
+                type="text"
+                id="calendar_in"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder="Check-in"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-angle-left fa-2x"></i
+              ></span>
+              <span class="input-group-text">
+                <i class="fas fa-angle-right fa-2x"></i
+              ></span>
+            </div>
+          </div>
+
+          <div class="col-lg-4-offset border border-secondary">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="checkout"
+                  ><i class="far fa-calendar-alt"></i
+                ></span>
+              </div>
+
+              <input
+                type="text"
+                id="calendar_out"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder="Check-out"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-angle-left fa-2x"></i
+              ></span>
+              <span class="input-group-text">
+                <i class="fas fa-angle-right fa-2x"></i
+              ></span>
+            </div>
+          </div>
+          <div class="col-lg-4-offset border border-secondary">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="family_members"></span>
+              </div>
+              <label for="hotel_rooms"></label>
+              <input
+                list="rooms"
+                id="hotel_rooms"
+                name="select_room"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder="Family-rooms"
+              />
+              <datalist id="rooms"></datalist>
+              <i
+                class="fas fa-users fa-1x"
+                data-fa-transform=" up-110 right-96 left-100 down-130"
+                -webkit-backface-visibility:
+                visible;
+                style="color: #c9d1d3"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="filters">
+        <div class="col-lg-3 border-right">
+          <div>
+            <div class="form-control_input"></div>
+            <label for="amount"></label>
+            <input
+              type="text"
+              id="amount"
+              disabled
+              placeholder="Price                       max.$"
+              {
+              color:rgba(192,192,192)
+            />
+
+            <div id="slider-range-min" class="ui-slider-handle"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 border-right">
+          <h6>Property type</h6>
+
+          <div class="star-rating">
+            <input type="radio" id="5-stars" name="rating" value="5" />
+            <label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" id="4-stars" name="rating" value="4" />
+            <label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" id="3-stars" name="rating" value="3" />
+            <label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" id="2-stars" name="rating" value="2" />
+            <label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" id="1-star" name="rating" value="1" />
+            <label for="1-star" class="star">&#9733;</label>
+          </div>
+        </div>
+        <div class="col-lg-3 border-right">
+          <h6>Guest rating</h6>
+
+          <select
+            name="guest_rating"
+            id="guest_rating"
+            class="form-control input-lg"
+          >
+            <option value="">
+              <bold>All</bold>
+              <div class="card card-body mb-1">
+                <h5>
+                  <option value="">0 - 2 Okay</option>
+                  <span class="text-primary"></span>
+                </h5>
+                <h5>
+                  <option value="">2 - 6 Fair</option>
+                  <span class="text-primary"></span>
+                </h5>
+                <h5>
+                  <option value="">6 - 7 Good</option>
+                  <span class="text-primary"></span>
+                </h5>
+                <h5>
+                  <option value="">7 - 8.5 Very Good</option>
+                  <span class="text-primary"></span>
+                </h5>
+                <h5>
+                  <option value="">8.5 - 10 Excellent</option>
+                  <span class="text-primary"></span>
+                </h5>
+              </div>
+            </option>
+          </select>
+          <i
+            class="fa fa-caret-down fa-3x"
+            data-fa-transform=" up-16 right-67 down-4"
+            style="color: #7c7f80"
+          ></i>
+        </div>
+
+        <div class="col-lg-3 border-up-0">
+          <h6>Hotel location</h6>
+
+          <select
+            name="hotel_location"
+            id="hotel_location"
+            class="form-control input-lg"
+          >
+            <option value="">
+              <bold>Champs Ely...</bold>
+            </option>
+          </select>
+          <i
+            class="fa fa-caret-down fa-3x"
+            data-fa-transform=" up-16 right-67 down-4"
+            style="color: #7c7f80"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="container bg-secondary" id="second_container">
+      <div class="row" id="sort_map">
+        <div class="col-lg-3">
+          <div class="form-control input-lg" id="parisMap">
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-Basic"
+                id="mapButton"
+                data-toggle="modal"
+                data-target="#modalRegular"
+              >
+                View map
+              </button>
+            </div>
+            <div
+              class="modal fade"
+              id="modalRegular"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-footer justify-content-center">
+                    <button
+                      type="button"
+                      class="btn btn-outline-info btn-md"
+                      data-dismiss="modal"
+                    >
+                      Close <i class="fas fa-times ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4"></div>
+
+        <div class="col-lg-3" id="sorting">
+          <label for="sorting_options">Sort by</label>
+          <select
+            name="sort_by"
+            id="sorting_options"
+            data-animate="fade"
+            multiple="multiple"
+            class="form-control form-control-sm"
+          ></select>
+        </div>
+      </div>
+
+      <div class="row" id="results"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+    <script src="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
